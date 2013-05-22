@@ -22,3 +22,5 @@ gem 'jquery-rails'
 
 
 gem "paperclip", "~> 3.0"
+
+gem 'therubyracer'
