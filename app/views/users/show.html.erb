@@ -1,0 +1,65 @@
+<% is_own_profile = (session[:user] == @user) %>
+<p id="notice"><%= notice %></p>
+
+<h1> 
+<% if is_own_profile %>
+	Your profile
+<% else %>
+	Profile for <%= @user.name %>
+<% end %>
+</h1>
+
+<p>
+  <b>Email:</b>
+  <%= @user.email %>
+</p>
+
+<p>
+  <b>Friendship:</b> <br />
+  
+  <% if session[:user] %>
+	  <% unless is_own_profile %>
+	  	<% if session[:user].has_befriended @user %>
+	  		You've befriended this person! They can see your private photos. <br />
+	  	<% else %>
+	  		<span class="befriend">&rarr; 
+	  			<%= link_to "Befriend this person.", url_for(:controller => :users, :action => :befriend, :id => @user.id) %>
+	  		</span>
+	  	<% end %>
+	  <% end %>
+	<% end %>
+
+  This user has befriended
+  <% if @friends.length > 0 %> 
+  	<%= raw(@friends.map do |friend|
+  		link_to friend.name, friend
+  	end.join(', ')) %>
+  <% else %>
+  	nobody &mdash; yet.
+  <% end %>
+  </br>
+</p>
+<p>
+	<b>Images by this user:</b>
+	<% if @photos.length == 0 %>
+	<%= @user.name %> hasn't uploaded any photos yet. Stay tuned!
+	<% else %>
+	<div class="gallery">
+		<% @photos.each do |photo| %>
+			<div class="photo">
+				<%= link_to photo do %>
+					<%= image_tag photo.image.url(:small), :alt => photo.description, :title => photo.description%>
+				<% end %>
+			</div>
+		<% end %>
+	</div>
+	<% end %>
+</p>
+
+<%= link_to raw('&#8592; All users'), users_path %> |
+
+<% if is_own_profile %>
+	<%=  link_to 'Change your details', edit_user_path(@user) %>
+<% else %>
+	<%= link_to 'Log in as this user', url_for(:controller => 'users', :action => 'login', :email => @user.email) %>
+<% end %>

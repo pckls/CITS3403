@@ -1,0 +1,5 @@
+<h1>Change your details</h1>
+<%= render 'form' %>
+
+
+<%= link_to raw('&#8592; Back'), @user %> | <%= link_to 'Destroy your profile', @user, :method => :delete, :data => { :confirm => 'Are you sure?' } %>

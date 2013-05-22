@@ -1,0 +1,21 @@
+
+<h1>Log in to access the magic.</h2>
+<fieldset id="info">
+	<% if  @succeeded %>
+		<legend id="notice">Congratulations!</legend>
+		 You are now logged into Photickle as <%= link_to @user.name, user_path(@user) %>.
+	<% else %>
+		<% if @attempted %>
+			<legend id="notice">Sorry, those credentials are incorrect. Please try again.</legend>
+		<% else %>
+		<legend id="notice">Please enter your credentials.</legend>
+		<% end %>
+		<form action="" method="post">
+			<label for="email">Email:</label> <br />
+			<input type="text" id="email" name="email" value="<%= @email %>"/> <br />
+			<label for="password">Password:</label> <br />
+			<input type="password" id="password" name="password" /> <br />
+			<input type="submit" value="Let's go!" />
+		</form>
+	<% end %>
+</fieldset>

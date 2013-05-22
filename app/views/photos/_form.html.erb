@@ -1,0 +1,33 @@
+<%= form_for(@photo) do |f| %>
+  <% if @photo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@photo.errors.count, "error") %> prohibited this photo from being saved:</h2>
+
+      <ul>
+      <% @photo.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+  </div>
+
+  <div class="field">
+    <%= f.check_box :private %> <b><%= f.label :private %></b> &mdash; only visible to you and your friends
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_field :description, :size => 100 %>
+  </div>
+  <div class="field">
+    <%= button_tag "Geotag this photo...", :class=> :hidden, :id=>"geo-magic" %>
+    <%= f.text_field :geo, :size => 100, :class=>"hidden-js" %>
+  </div>
+  <div class="actions">
+    <%= f.submit raw "&#10003; Share this" %>
+  </div>
+<% end %>

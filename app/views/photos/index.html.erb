@@ -1,0 +1,24 @@
+<h1>The shared gallery</h1>
+<p id="notice">
+	<% if session[:user] %>
+		All public photos, plus any private photos shared with you.
+	<% else %>
+		Public photos only &mdash;
+		<%= link_to 'log in', controller: :users, action: :login%>
+		to see any private photos from your friends.
+	<% end %>
+</p>
+
+<div class="gallery">
+
+  <div class="photo">
+  <% @photos.each do |photo| %>
+    <div class="photo">
+      <%= link_to photo do %>
+      	<% caption = "Photo by #{photo.user.name}" %>
+        <%= image_tag photo.image.url(:small), :alt => (caption), :title => (caption) %>
+      <% end %>
+    </div>   
+<% end %>
+</div>
+</div>

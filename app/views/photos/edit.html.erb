@@ -1,0 +1,13 @@
+<h1>Editing photo</h1>
+
+<% back_link = link_to raw('&#8592; Back'), @photo %>
+
+<% if @allowed %>
+	<%= render 'form' %>
+	<%= back_link %> |
+	<%= link_to 'Destroy this photo', @photo, :method => :delete, :data => { :confirm => 'Are you sure?' } %>
+
+<% else %>
+	<div> Sorry, only <%= link_to @photo.user.name, @photo.user %> can edit this masterpiece.</div>
+	<br /><%= back_link %>
+<% end %>

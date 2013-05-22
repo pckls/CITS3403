@@ -1,0 +1,10 @@
+<h1>Our Community</h1>
+
+<p id="notice"><%= notice %></p>
+
+<ul>
+  <% @users.each do |user| %>
+  <li> <%= link_to user.name, user %>
+  <% end %>
+</ul>
+

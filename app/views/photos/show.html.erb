@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <%= image_tag @photo.image.url(:large) %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @photo.description or raw "<i>Speaks for itself.</i>" %>
+</p>
+
+<p>
+  <b>Privacy:</b>
+  <%= @photo.private ? "Secret -- only #{@photo.user.name} and friends can see this." : "Anyone can see this." %>
+</p>
+
+<p>
+  <b>Uploaded by:</b>
+  <u><b><%= link_to @photo.user.name, @photo.user %></b></u>, on <%= @photo.created_at.to_formatted_s(:long_ordinal) %>
+</p>
+
+<% if @photo.geo %>
+	<p>
+	  <b>Geolocation of upload:</b>
+	  <%= link_to @photo.geo + " (map)", "//google.com/search?q=" + @photo.geo, :target => 'new' %>
+	</p>
+<% end %>
+
+<p>
+  <b>Other Sizes:</b>
+  <%= link_to "Original", @photo.image.url %> |
+  <%= link_to "Large", @photo.image.url(:large) %> |
+  <%= link_to "Medium", @photo.image.url(:medium) %> |
+  <%= link_to "Small", @photo.image.url(:small) %> |
+  <%= link_to "Thumbnail", @photo.image.url(:thumb) %>
+</p>
+
+<%= link_to raw('&#8592; Back'), photos_path %> |
+<%= link_to 'Edit this photo', edit_photo_path(@photo) %>
