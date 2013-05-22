@@ -13,3 +13,6 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+# Ignore images uploaded by users - This would be done via content/db backups in a production system
+/public/system/photos/images
