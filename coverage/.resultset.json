@@ -1,0 +1,87 @@
+{
+  "Unit Tests": {
+    "coverage": {
+      "/mnt/data/cits3403/cits3403l/photickle/test/unit/helpers/users_helper_test.rb": [
+        1,
+        null,
+        1,
+        null
+      ],
+      "/mnt/data/cits3403/cits3403l/photickle/test/unit/photo_test.rb": [
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/mnt/data/cits3403/cits3403l/photickle/test/unit/user_test.rb": [
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    "timestamp": 1369267246
+  },
+  "Functional Tests": {
+    "coverage": {
+      "/mnt/data/cits3403/cits3403l/photickle/test/functional/users_controller_test.rb": [
+        1,
+        null,
+        1,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        0,
+        null,
+        null
+      ]
+    },
+    "timestamp": 1369267249
+  }
+}
