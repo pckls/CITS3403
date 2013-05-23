@@ -3,11 +3,19 @@
 one:
   name: MyString
   email: MyString
-  password: MyString
-  session: MyString
+  salt: MyString
+  saltdata: MyString
+  digest: MyString
+  friendlist: MyString
+  #password: MyString
+  #session: MyString
 
 two:
   name: MyString
   email: MyString
-  password: MyString
-  session: MyString
+  salt: MyString
+  saltdata: MyString
+  digest: MyString
+  friendlist: MyString
+  #password: MyString
+  #session: MyString
