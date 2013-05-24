@@ -37,9 +37,9 @@
   <% else %>
   	nobody &mdash; yet.
   <% end %>
-  </br>
+  <br />
 </p>
-<p>
+<div>
 	<b>Images by this user:</b>
 	<% if @photos.length == 0 %>
 	<%= @user.name %> hasn't uploaded any photos yet. Stay tuned!
@@ -54,7 +54,7 @@
 		<% end %>
 	</div>
 	<% end %>
-</p>
+</div>
 
 <%= link_to raw('&#8592; All users'), users_path %> |
 
