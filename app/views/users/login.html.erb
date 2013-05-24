@@ -1,5 +1,4 @@
-
-<h1>Log in to access the magic.</h2>
+<h1>Log in to access the magic.</h1>
 <fieldset id="info">
 	<% if  @succeeded %>
 		<legend id="notice">Congratulations!</legend>
@@ -10,7 +9,7 @@
 		<% else %>
 		<legend id="notice">Please enter your credentials.</legend>
 		<% end %>
-		<form action="" method="post">
+		<form action="login" method="post">
 			<label for="email">Email:</label> <br />
 			<input type="text" id="email" name="email" value="<%= @email %>"/> <br />
 			<label for="password">Password:</label> <br />
