@@ -22,7 +22,7 @@
 <% if @photo.geo != "" %>
 	<p>
 	  <b>Geotag of upload:</b>
-	  <%= link_to @photo.geo + " (map)", "//google.com/search?q=" + @photo.geo, :target => 'new' %>
+	  <%= link_to @photo.geo + " (map)", "//google.com/search?q=" + URI.escape(@photo.geo), :target => 'new' %>
 	</p>
 <% end %>
 
