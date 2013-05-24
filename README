@@ -1,0 +1,15 @@
+===   SETUP INSTRUCTIONS   ===
+
+1. Build the bundle by issuing:
+   - bundle install
+
+2. In the webserver public directory create symbolic links to:
+   - /photickle/public/       [Main Site]
+   - /photickle/coverage/     [Unit Tests]
+
+   eg. 'ln -s ../photickle/public/ public' (access with http(s)://webserver.url/photickle/)
+
+3. Restart the server by issuing:
+   - 'touch /photickle/tmp/restart.txt'
+
+.
